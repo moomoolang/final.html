@@ -274,6 +274,13 @@ nav {
   /* could center text on mobile later */
 }
 
+.index-page h1 {
+ font-size: 3rem;
+ line-height: 1.2;
+  margin-bottom:1 rem;
+}
+
+
 .hero .overlay h1, .hero h2{
   color: var(--gold);
   font-size: clamp(1.5rem, 4vw, 2.5rem); /* minimum 1.5rem, maixmum 2.5rem */
