@@ -358,6 +358,93 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   margin: 0.4rem 0;
 }
+
+.profile-preview {
+  margin: 3rem 0;
+}
+
+profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit:cover;
+  border: 2px solid var(--cyan)
+}
+
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.edit-btn {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  background: var(--cyan);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.member-details, .account-info {
+  margin-bottom: 1.5rem;
+}
+
+.member-details h4, .account-info h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.account-info label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.account-info input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.save-btn {
+  background: var(--gold);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
 /* ------------------- CARD STYLE ------------------- */
 .card {
   background:linear-gradient(135deg, #be86df, #559ad3); /*gradient*/
