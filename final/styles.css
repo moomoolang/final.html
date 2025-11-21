@@ -1,0 +1,486 @@
+:root {
+  /* Named based on the theme of Bali's beaches */
+  --navy: #001336;
+  --gold: #DFBD69;
+  --cyan: #11AC9D;
+  --muted: #555;
+
+  --max-width: 1100px;
+}
+
+/* playfair-display-regular - latin */
+/* lexend-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/lexend-v26-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lexend-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lexend';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/lexend-v26-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* atkinson-hyperlegible-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/atkinson-hyperlegible-v12-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* quick reset */
+* {
+  box-sizing: border-box;
+}
+
+/*Grid Layout for Plan / Subscription*/
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+}
+
+/* Bubbles in Plans*/
+.plan-bubble {
+  background:white;
+  border-radius: 20px;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.25 ease, box-shadow 0.25 ease;
+
+}
+
+/* when hovered*/
+.plan-bubble:hover {
+  transform:translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+/*Reccomended plan*/
+.plan-bubble.reccomended {
+  background: linear-gradient(135deg, #be86df, #559ad3); /*gradient*/
+  color:black;
+  box-shadow:0 12px 36px rgba (0, 0, 0, 0.35);
+}
+
+/*price text (p) */
+.plan-bubble ul {
+  list-style: none;
+  padding: 0;
+  margin: 1 rem 0;
+}
+
+.plan-bubble li{
+  margin: 0.3 rem 0;
+}
+
+/*Buttons */
+.select-btn {
+  padding: 0.6 rem 1.2 rem;
+  border: none;
+  border-radius: 24px;
+  background: #222;
+  color:white;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.plan-bubble.featured.select-btn {
+   background: white;
+   color:#111;
+}
+
+.select-btn:hover {
+  background: #444;
+}
+
+/*Highlights*/
+.highlights{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-bottom:2rem;
+  justify-content: center;
+   background:linear-gradient(135deg, #be86df, #559ad3); /*gradient*/
+}
+
+.highlight-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+  
+
+}
+
+.highlight-image::before {
+  content:'';
+  position:absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* black with 30% */
+  z-index: 1;
+}
+
+.highlight-image *{
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-image h2, 
+.highlight-image p {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.highlight-image img{
+  max-width: 330px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  line-height: 1.6; /* changed slightly — feels better to read */
+  background: linear-gradient(135deg, #94e6c4, #d3559a);
+  color: #222;
+  /* note to self: consider adding subtle texture background later */
+}
+
+
+
+/* BRANDING */
+.brand h1 {
+  font-family: 'Atkinson Hyperlegible', serif;
+  color:var(--gold);
+  font-size: 1.6 rem;
+  margin: 0;
+}
+
+
+
+/* ------------------- HEADER ------------------- */
+header {
+  background: linear-gradient(135deg, #94e6c4, #d3559a);
+  border-bottom: 4px solid var(--teal);
+
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.2rem; /* small asymmetry, feels more organic */
+}
+
+.container h1,h2 {
+  color: var(--gold);
+}
+
+.container p{
+  color: #222;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand img {
+  width: 55px; /* bumped up slightly */
+  border-radius: 10px;
+}
+
+.brand h1 {
+  font-family: 'Atkinson Hyperlegible', serif;
+  color: var(--gold);
+  font-size: 1.10rem;
+  margin: 0;
+}
+
+/* -------------- MENU LINKS ---------------- */
+.menu {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 0.7rem;
+  transition: color 0.2 ease;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.7rem;
+  transition: color 0.2s ease;
+}
+
+/* note: might add an underline animation later */
+.menu a:hover,
+.menu a.active {
+  color: var(--gold);
+  font-size: 1.22rem;
+}
+
+/* ------------------- HERO SECTION ------------------- */
+.hero {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  /* maybe add filter or gradient overlay someday */
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top; /*center bottom */
+  display: block;
+}
+
+.hero .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  /* could center text on mobile later */
+}
+
+.hero .overlay h1, .hero h2{
+  color: var(--gold);
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* minimum 1.5rem, maixmum 2.5rem */
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+}
+
+
+
+
+.hero ::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba (rgba(0,0,0,0.2), rgba(0,0,0,0.6)));
+  pointer-events: none;
+}
+
+
+/*---ABOUT US */
+.team{
+  display: flex;
+  gap: 2.75 rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding:2rem 0;
+}
+
+.member {
+  text-align: center;
+  max-width: 250px;
+}
+
+.member img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Keeps from stretching */
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba (0, 0, 0, 0.15);
+}
+
+.location{
+  text-align: center;
+  margin: 3rem 0;
+}
+
+
+.location h2{
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.map-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+}
+
+.location-details p {
+  color: #222;
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
+/* ------------------- CARD STYLE ------------------- */
+.card {
+  background:linear-gradient(135deg, #be86df, #559ad3); /*gradient*/
+  padding: 1.1rem 1.6rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.2rem;
+}
+
+.card.intro p{
+  color: rgb(255, 255, 255);
+}
+
+
+.statement img{
+  width: 320px;
+  height: 320px;
+  border-radius: 75%;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.2rem;
+  object-fit: cover;
+  padding:0%;
+}
+
+/* ------------------- BUTTONS ------------------- */
+.btn {
+  background: var(--gold);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--cyan);
+  color: var(--cyan);
+}
+
+.btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: var(--cyan);
+  color: #fff;
+}
+
+/* ------------------- CTA ROW ------------------- */
+.cta-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap; /* added so buttons don’t break layout */
+}
+
+/* ------------------- FOOTER ------------------- */
+footer {
+  background: var(--teal);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2.4rem; /* slightly increased for breathing room */
+  font-size: 0.95rem;
+}
+
+
+
+
+/* ------------------- FORMS ------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  gap: 0.6rem;
+}
+
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.55rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 4px rgba(15, 107, 99, 0.3);
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 800px) {
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero img {
+    height: auto;       /* maintain aspect ratio */
+    width: 100%;        /* full width for mobile */
+  }
+
+  .activity img,
+  .restaurant img {
+    width: 100%;        /* full width on mobile */
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .statement img {
+    width: 80%;         /* responsive width */
+    max-width: 320px;   /* don’t get too big */
+    aspect-ratio: 1 / 1; /* keeps image square for circular shape */
+    border-radius: 50%; /* makes it circular */
+    object-fit: cover;  /* crop image to fit square */
+    border: 1px solid #eee;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin: 1rem auto;  /* center and spacing */
+    display: block;     /* removes inline spacing issues */
+    padding: 0;         /* remove padding from image */
+  }
+
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+
