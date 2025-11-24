@@ -373,20 +373,12 @@ profile-card {
 }
 
 
-
+/*----PROFILE PREVIEW ----*/
 .profile-header {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-}
-
-.profile-pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit:cover;
-  border: 2px solid var(--cyan)
 }
 
 
