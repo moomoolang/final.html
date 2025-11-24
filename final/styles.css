@@ -382,8 +382,8 @@ profile-card {
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit:cover;
   border: 2px solid var(--cyan)
